@@ -10,7 +10,7 @@ import 'swiper/dist/css/swiper.min.css'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import './filters'
 Vue.use(VueLazyload, {loading})
 Vue.use(Mint)
 

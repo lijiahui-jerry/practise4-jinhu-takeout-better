@@ -1,0 +1,306 @@
+[
+  {
+    "uuid": "12312kmsaldi-21jnoisd-12nlksda",
+    "id": 1,
+    "shop_name": "麻辣香锅",
+    "shop_avatar": "/images/shops/1.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "uuid": "sajoidjoi3-213-sad12-4",
+        "name": "单人套餐",
+        "good_avatar": "/images/orderList/guozi.jpg",
+        "costs": 18,
+        "counts": 2
+      }
+    ]
+  },
+  {
+    "uuid": "dsfhujtr3-21jnoisd-12nlksda",
+    "id": 2,
+    "shop_name": "黄焖鸡米饭",
+    "shop_avatar": "/images/shops/2.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "uuid": "sajorhtoi3-213-sad12-4",
+        "name": "黄焖鸡",
+        "good_avatar": "/images/orderList/huangmenji.jpg",
+        "costs": 12,
+        "counts": 1
+      },
+      {
+        "id": 2,
+        "uuid": "saertuoi3-213-sad12-4",
+        "name": "排骨饭",
+        "good_avatar": "/images/orderList/paigufan.jpg",
+        "costs": 37,
+        "counts": 1
+      }
+    ]
+  },
+  {
+    "uuid": "dsfy31tr3-21jnoisd-12nlksda",
+    "id": 3,
+    "shop_name": "炒饭炒面",
+    "shop_avatar": "/images/shops/3.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "uuid": "sajortyj3-213-sad12-4",
+        "name": "炒面",
+        "good_avatar": "/images/orderList/chaomian.jpg",
+        "costs": 8,
+        "counts": 1
+      },
+      {
+        "id": 2,
+        "uuid": "s547huoi3-213-sad12-4",
+        "name": "炒饭",
+        "good_avatar": "/images/orderList/chaofan.jpg",
+        "costs": 15,
+        "counts": 1
+      },
+      {
+        "id": 3,
+        "uuid": "s52ltgp3-213-sad12-4",
+        "name": "葱",
+        "good_avatar": "/images/orderList/cong.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 4,
+        "uuid": "s54719xi3-213-sad12-4",
+        "name": "姜",
+        "good_avatar": "/images/orderList/jiang.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 5,
+        "uuid": "s53hoi3-213-sad12-4",
+        "name": "蒜",
+        "good_avatar": "/images/orderList/suan.jpg",
+        "costs": 1,
+        "counts": 1
+      }
+    ]
+  },
+  {
+    "uuid": "ds124454r3-21jnoisd-12nlksda",
+    "id": 4,
+    "shop_name": "山东水饺",
+    "shop_avatar": "/images/shops/8.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "uuid": "s1jnoistyj3-213-sad12-4",
+        "name": "荠菜猪肉陷",
+        "good_avatar": "/images/orderList/jiao1.jpg",
+        "costs": 8,
+        "counts": 1
+      },
+      {
+        "id": 2,
+        "uuid": "1jnoisvi3-213-sad12-4",
+        "name": "韭菜陷",
+        "good_avatar": "/images/orderList/jiao2.jpg",
+        "costs": 10,
+        "counts": 1
+      },
+      {
+        "id": 3,
+        "uuid": "s52ltg1jnois3-213-sad12-4",
+        "name": "鱼肉陷",
+        "good_avatar": "/images/orderList/jiao3.jpg",
+        "costs": 12,
+        "counts": 1
+      },
+      {
+        "id": 4,
+        "uuid": "s547191jnois-213-sad12-4",
+        "name": "虾仁陷",
+        "good_avatar": "/images/orderList/jiao4.jpg",
+        "costs": 11,
+        "counts": 1
+      },
+      {
+        "id": 5,
+        "uuid": "s54711jnois3-213-sad12-4",
+        "name": "三鲜陷",
+        "good_avatar": "/images/orderList/jiao5.jpg",
+        "costs": 18,
+        "counts": 1
+      },
+      {
+        "id": 6,
+        "uuid": "s1jnois-213-sad12-4",
+        "name": "牛肉陷",
+        "good_avatar": "/images/orderList/jiao6.jpg",
+        "costs": 15,
+        "counts": 1
+      },
+      {
+        "id": 7,
+        "uuid": "1jnois-sad12-4",
+        "name": "猪肉芹菜陷",
+        "good_avatar": "/images/orderList/jiao7.jpg",
+        "costs": 13,
+        "counts": 1
+      },
+      {
+        "id": 8,
+        "uuid": "s54719xi3-21jnois-sad12-4",
+        "name": "葱",
+        "good_avatar": "/images/orderList/cong.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 9,
+        "uuid": "s547191jnois3-sad12-4",
+        "name": "姜",
+        "good_avatar": "/images/orderList/jiang.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 10,
+        "uuid": "s53hoi3-2131jnoisd12-4",
+        "name": "蒜",
+        "good_avatar": "/images/orderList/suan.jpg",
+        "costs": 1,
+        "counts": 1
+      }
+    ]
+  },
+  {
+    "uuid": "ds1244541jnoisjnoisd-12nlksda",
+    "id": 5,
+    "shop_name": "麻辣香锅",
+    "shop_avatar": "/images/shops/1.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "uuid": "s1jnoistyj3-213-sad1jnois4",
+        "name": "猪肉",
+        "good_avatar": "/images/orderList/zhurou.jpg",
+        "costs": 8,
+        "counts": 1
+      },
+      {
+        "id": 2,
+        "uuid": "1jnoisvi3-211jnois2-4",
+        "name": "韭菜",
+        "good_avatar": "/images/orderList/jiucai.jpg",
+        "costs": 5,
+        "counts": 1
+      },
+      {
+        "id": 3,
+        "uuid": "s52ltg1jnois3-2131jnois",
+        "name": "鱼",
+        "good_avatar": "/images/orderList/yu.jpg",
+        "costs": 3,
+        "counts": 1
+      },
+      {
+        "id": 4,
+        "uuid": "s547191jnoi1jnois3-sad12-4",
+        "name": "虾仁",
+        "good_avatar": "/images/orderList/xiaren.jpg",
+        "costs": 5,
+        "counts": 1
+      },
+      {
+        "id": 5,
+        "uuid": "1jnois-4",
+        "name": "虾球",
+        "good_avatar": "/images/orderList/xiaqiu.jpg",
+        "costs": 3,
+        "counts": 1
+      },
+      {
+        "id": 6,
+        "uuid": "s1jn1jnois4",
+        "name": "牛饼",
+        "good_avatar": "/images/orderList/niuroubin.jpg",
+        "costs": 10,
+        "counts": 1
+      },
+      {
+        "id": 7,
+        "uuid": "1j1jnois213",
+        "name": "蒜",
+        "good_avatar": "/images/orderList/suan.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 8,
+        "uuid": "s54719xi241jnois12-4",
+        "name": "葱",
+        "good_avatar": "/images/orderList/cong.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 9,
+        "uuid": "s542221jnoisnois3-sad12-4",
+        "name": "姜",
+        "good_avatar": "/images/orderList/jiang.jpg",
+        "costs": 1,
+        "counts": 1
+      }
+    ]
+  },
+  {
+    "uuid": "ds1tr3-21jnoisd-12nlksda",
+    "id": 6,
+    "shop_name": "炒饭炒面",
+    "shop_avatar": "/images/shops/3.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "uuid": "sajortyj3-213-sad12-4",
+        "name": "炒面",
+        "good_avatar": "/images/orderList/chaomian.jpg",
+        "costs": 8,
+        "counts": 1
+      },
+      {
+        "id": 2,
+        "uuid": "s547huoi3-213-sad12-4",
+        "name": "炒饭",
+        "good_avatar": "/images/orderList/chaofan.jpg",
+        "costs": 15,
+        "counts": 1
+      },
+      {
+        "id": 3,
+        "uuid": "s52ltgp3-213-sad12-4",
+        "name": "葱",
+        "good_avatar": "/images/orderList/cong.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 4,
+        "uuid": "s54719xi3-213-sad12-4",
+        "name": "姜",
+        "good_avatar": "/images/orderList/jiang.jpg",
+        "costs": 1,
+        "counts": 1
+      },
+      {
+        "id": 5,
+        "uuid": "s53hoi3-213-sad12-4",
+        "name": "蒜",
+        "good_avatar": "/images/orderList/suan.jpg",
+        "costs": 1,
+        "counts": 1
+      }
+    ]
+  }
+]

@@ -1,255 +1,195 @@
 <template>
- <div class="order">
-  <!-- 订单页头部 -->
-  <Header title="订单列表"></Header>
-  <!-- 已登录 -->
-  <div class="content" ref="content">
-   <ul>
-    <li class="order-card">
-     <div class="line1">
-      <img class="avatar" src="./image/no-built.png">
-      <span>店铺名称</span>
-      <span>
-       <i class="iconfont icon-xiangyou1"></i>
-      </span>
-     </div>
-     <div class="line2">
-      <img class="goods-img" src="./image/1.jpg">
-      <span class="goods-name">
-       麻辣香锅锅子11111111111111111111
-      </span>
-      <span class="goods-counts">
-       *99
-      </span>
-     </div>
-     <div class="line3">
-      <span class="price">￥<span class="number">888</span>元</span>
-      <span class="confirm-receipt" @click="confirmReceipt()">确认收货</span>
-      <span class="one-more" @click="oneMore()">再来一单</span>
-     </div>
-    </li>
-    <li class="order-card">
-     <div class="line1">
-      <img class="avatar" src="./image/no-built.png">
-      <span>当前为静态的四种情况</span>
-      <span>
-       <i class="iconfont icon-xiangyou1"></i>
-      </span>
-     </div>
-     <div class="line2">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <span class="goods-counts">
-       共2件
-      </span>
-     </div>
-     <div class="line3">
-      <span class="price">￥<span class="number">888</span>元</span>
-      <span class="confirm-receipt" @click="confirmReceipt()">确认收货</span>
-      <span class="one-more" @click="oneMore()">再来一单</span>
-     </div>
-    </li>
-    <li class="order-card">
-     <div class="line1">
-      <img class="avatar" src="./image/no-built.png">
-      <span>后台还在建设</span>
-      <span>
-       <i class="iconfont icon-xiangyou1"></i>
-      </span>
-     </div>
-     <div class="line2">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <span class="goods-counts">
-       <span>&nbsp;共5件</span>
-      </span>
-     </div>
-     <div class="line3">
-      <span class="price">￥<span class="number">888</span>元</span>
-      <span class="confirm-receipt" @click="confirmReceipt()">确认收货</span>
-      <span class="one-more" @click="oneMore()">再来一单</span>
-     </div>
-    </li>
-    <li class="order-card">
-     <div class="line1">
-      <img class="avatar" src="./image/no-built.png">
-      <span>后台还在建设</span>
-      <span>
-       <i class="iconfont icon-xiangyou1"></i>
-      </span>
-     </div>
-     <div class="line2">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <span class="goods-counts">
-       <span>···</span><span>&nbsp;共9件</span>
-      </span>
-     </div>
-     <div class="line3">
-      <span class="price">￥<span class="number">888</span>元</span>
-      <span class="confirm-receipt" @click="confirmReceipt()">确认收货</span>
-      <span class="one-more" @click="oneMore()">再来一单</span>
-     </div>
-    </li>
-    <li class="order-card">
-     <div class="line1">
-      <img class="avatar" src="./image/no-built.png">
-      <span>后台还在建设</span>
-      <span>
-       <i class="iconfont icon-xiangyou1"></i>
-      </span>
-     </div>
-     <div class="line2">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <img class="goods-img" src="./image/1.jpg">
-      <span class="goods-counts">
-       <span>···</span><span>&nbsp;共9件</span>
-      </span>
-     </div>
-     <div class="line3">
-      <span class="price">￥<span class="number">888</span>元</span>
-      <span class="confirm-receipt" @click="confirmReceipt()">确认收货</span>
-      <span class="one-more" @click="oneMore()">再来一单</span>
-     </div>
-    </li>
-   </ul>
+  <div class="order-main">
+    <Header title="订单列表"></Header>
+    <div class="order-content" ref="orderContent">
+      <ul class="orders-ul">
+        <li class="order-li" v-for="shop in orderList" :key="shop.uuid">
+          <div class="row line1">
+            <div class="col-xs-2 order-shop-avatar">
+              <img class="img-rounded" :src="shop.shop_avatar">
+            </div>
+            <div class="col-xs-10 order-shop-name" @click="$router.push('shop')">
+              {{ shop.shop_name }}<i class="iconfont icon-xiangyou1"></i>
+            </div>
+          </div>
+          <div class="row line2">
+            <span class="col-xs-12 order-goods-brief">
+              <span v-for="(item,index) in shop.goods">
+                <img class="order-goods-img" :src="item.good_avatar" :key="item.uuid" v-if="index<5">
+                <span class="order-goods-name" v-if="shop.goods.length==1">{{ item.name }}*{{ item.counts }}</span>
+              </span>
+                <span v-if="shop.goods.length>5" style="font-weight: 600">···</span>
+              <span class="order-goods-counts" v-if="shop.goods.length>1">共{{ goodsCounts(shop) }}件</span>
+            </span>
+          </div>
+          <div class="row line3">
+            <div class="col-xs-4 order-price">
+              共<span class="number">{{ goodsCost(shop) }}</span>元
+            </div>
+            <div class="col-xs-2"></div>
+            <div class="col-xs-3 order-confirm-receipt" @click="confirmReceipt()">
+             <span class="order-confirm-receipt-btn">
+              确认收货
+             </span>
+            </div>
+            <div class="col-xs-3 order-one-more" @click="oneMore()">
+              <span class="order-one-more-btn">
+                再来一单
+             </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
- </div>
 </template>
 
 <script>
 import Header from "@/components/Header"
 import BScroll from "better-scroll"
+import {mapState} from "vuex";
 
 export default {
-  name:"Order",
-  components:{Header},
-  methods:{
+  name: "Order",
+  components: {Header},
+  methods: {
     //再来一单
-    oneMore(){
+    oneMore() {
       alert('再来一单')
     },
     //确认收货
-    confirmReceipt(){
+    confirmReceipt() {
       alert('确认收货')
     },
+    // 订单商品总数量
+    goodsCounts(item) {
+      return item.goods.reduce((pre, item) => pre + item.counts, 0)
+    },
+    // 订单商品总价
+    goodsCost(item) {
+      return item.goods.reduce((pre, item) => pre + item.costs * item.counts, 0)
+    },
   },
-  mounted(){
-    new BScroll(this.$refs.content,{click:true})
+  mounted() {
+    this.$store.dispatch('getOrderList')
+    this.$nextTick(() => {
+      setTimeout(() => {
+        if (!this.orderBS)
+          this.orderBS = new BScroll(this.$refs.orderContent, {click: true})
+        else
+          this.orderBS.refresh()
+      }, 200)
+    })
   },
+  computed: {
+    ...mapState({
+      orderList: state => state.order.orderList
+    }),
+  }
 }
 </script>
 
 <style scoped lang="less">
-.order{
-  width:100vw;
-  height:100vh;
-  position:relative;
-  background-color:#F2F2F2;
+.order-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
 
-  .content{
-    position:absolute;
-    top:45px;
-    bottom:50px;
-    left:0;
-    right:0;
+  .order-content {
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
 
-    .order-card{
-      width:95%;
-      margin:10px auto;
-      padding:10px 0;
-      border:none;
-      border-radius:4px;
-      background-color:#FFFFFF;
+    .orders-ul {
+      padding: 5px 0;
+      .order-li {
+        background-color: #f2f2f2;
+        margin: 0 10px 10px;
+        padding: 5px;
+        border-radius: 4px;
 
-      .line1{
-        font-size:22px;
-        height:26px;
-        line-height:26px;
-        margin:0 4px 4px;
-        padding-top:5px;
+        .line1 {
+          text-align: left;
 
-        .avatar{
-          width:26px;
-          aspect-ratio:1/1;
-          display:inline-block;
-          vertical-align:top;
-          border-radius:2px;
-        }
-      }
+          .order-shop-avatar {
+            text-align: right;
 
-      .line2{
-        margin:10px auto;
-        display:flex;
-        flex-wrap:nowrap;
-        max-width:95%;
-        font-size:15px;
-        overflow:hidden;
-        text-overflow:ellipsis;
+            .img-rounded {
+              width: 25px;
+              aspect-ratio: 1/1;
+            }
+          }
 
-        .goods-img{
-          //font-size:0;
-          width:50px;
-          aspect-ratio:1/1;
-          margin-right:5px;
-          border-radius:5px;
-        }
-
-        .goods-name{
-          margin-right:10px;
-          height:50px;
-          line-height:50px;
-          overflow:hidden;
-          text-overflow:ellipsis;
-          white-space:nowrap;
-        }
-
-        .goods-counts{
-          height:50px;
-          line-height:50px;
-        }
-      }
-
-      .line3{
-        margin:2px;
-        height:30px;
-        line-height:20px;
-
-        &::after{
-          content:'';
-          display:block;
-          clear:both;
-        }
-
-        .price{
-          float:left;
-          padding-left:2%;
-          font-size:14px;
-
-          .number{
-            color:red;
+          .order-shop-name {
+            padding-left: 0;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 25px;
           }
         }
 
-        .one-more, .confirm-receipt{
-          float:right;
-          font-size:16px;
-          color:#FFFFFF;
-          background-color:#684E94;
-          overflow:hidden;
-          padding:3px 6px;
-          margin:0 5px;
-          border-radius:5px;
-          font-weight:0;
+        .line2 {
+          .order-goods-brief {
+            margin: 10px 0;
+            font-size: 15px;
+            overflow: hidden;
+
+            .order-goods-img {
+              width: 50px;
+              aspect-ratio: 1/1;
+              margin-right: 5px;
+              border-radius: 5px;
+            }
+
+            .order-goods-name {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .line3 {
+          padding: 5px 0;
+
+          .order-price {
+            font-size: 14px;
+
+            .number {
+              color: red;
+            }
+          }
+
+          .order-confirm-receipt {
+            padding-right: 0;
+            text-align: right;
+
+            .order-confirm-receipt-btn {
+              font-size: 14px;
+              color: #FFFFFF;
+              background-color: #684E94;
+              padding: 4px;
+              border-radius: 5px;
+            }
+          }
+
+          .order-one-more {
+            padding-left: 0;
+            text-align: center;
+
+            .order-one-more-btn {
+              font-size: 14px;
+              color: #FFFFFF;
+              background-color: #684E94;
+              padding: 4px;
+              border-radius: 5px;
+            }
+          }
         }
       }
     }

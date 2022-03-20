@@ -6,9 +6,9 @@
         <div class="swiper-slide" v-for="(navPages) in navigationArr" :key="navPages.uuid">
           <div class="nav-link" v-for="(nav) in navPages" :key="nav.uuid" @click="$router.push(nav.link)">
             <div class="img-container">
-              <img v-lazy="nav.image" :alt="nav.description">
+              <img class="img-rounded" v-lazy="nav.image" :alt="nav.description">
             </div>
-            <span>{{ nav.title }}</span>
+            <span class="img-title">{{ nav.title }}</span>
           </div>
         </div>
       </div>
@@ -62,9 +62,7 @@ export default {
 
 <style scoped lang="less">
 .nav {
-  //position:relative;
-  //margin-top:10px;
-  padding-top: 10px;
+  padding-top: 5px;
   height: 220px;
   background: #F7F7F7;
 
@@ -74,6 +72,8 @@ export default {
     height: 100%;
 
     .swiper-wrapper {
+      border: none;
+
       .swiper-slide {
         display: flex;
         //允许flex布局换行
@@ -83,20 +83,20 @@ export default {
         .nav-link {
           display: block;
           width: 25%;
+          text-align: center;
 
           .img-container {
             width: 100%;
-            text-align: center;
             padding-bottom: 5px;
 
-            img {
+            .img-rounded {
               width: 60px;
-              height: 60px;
-              border-radius: 5px;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
             }
           }
 
-          span {
+          .img-title {
             display: block;
             width: 100%;
             text-align: center;
@@ -106,6 +106,10 @@ export default {
         }
       }
     }
+  }
+
+  .swiper-pagination {
+    bottom: 0;
   }
 }
 </style>

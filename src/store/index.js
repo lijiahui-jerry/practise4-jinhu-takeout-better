@@ -5,9 +5,10 @@ import me from '@/store/me'
 import shop from "@/store/shop"
 import helpEachOther from "@/store/helpEachOther"
 import educationSupermarket from "@/store/educationSupermarket"
+import order from "@/store/order";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules:{home,me,shop,helpEachOther,educationSupermarket},
+    modules: {home, me, shop, helpEachOther, educationSupermarket, order},
 })

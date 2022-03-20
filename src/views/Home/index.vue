@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :title="school.name" :right=!ifLogged()></Header>
-    <div class="main-content">
+    <div class="home-main">
       <Navigation class="my-navigation"></Navigation>
       <ShopList class="my-shop-list"></ShopList>
     </div>
@@ -37,13 +37,12 @@ export default {
 </script>
 
 <style scoped lang="less">
-.main-content {
+.home-main {
   position: absolute;
   top: 45px;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: scroll;
 
   .my-navigation {
     position: absolute;
@@ -59,7 +58,8 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 }
 </style>

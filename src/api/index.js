@@ -24,6 +24,8 @@ export const reqUserInfo=(token)=>requests({
 })
 //获取商家商品
 export const reqShopDetail=()=>mockRequests.get('/shopDetail')
+//获取订单列表
+export const reqOrderList=()=>mockRequests.get('/orderList')
 //获取互帮互助列表
 export const reqHelperList=()=>requests.get('/getHelperList')
 //获取教育超市商品列表

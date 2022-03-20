@@ -8,7 +8,7 @@
       </div>
       <div class="col-xs-3" @click="routerGo('search')" :class="{active:pageFlag('search')}">
         <i class="iconfont icon-sousuo"></i>
-        <span>搜索</span>
+        <span>觅食</span>
       </div>
       <div class="col-xs-3" @click="routerGo('order')" :class="{active:pageFlag('order')}">
         <i class="iconfont icon-dingdan"></i>
