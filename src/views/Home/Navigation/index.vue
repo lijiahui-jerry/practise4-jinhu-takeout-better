@@ -30,12 +30,12 @@ export default {
     }),
     //根据返回的数据动态生成一维或多维数组，用于swiper动态分页，一页最多显示8个
     navigationArr() {
-      const {navigation} = this
       //用于存放小数组的大数组，它的维数相当于页数
-      const pageArr = []
+      let pageArr = []
       //用于存放具体数据的小数组，最大元素量为8，即每页最多显示8条数据
       let dataArr = []
-      navigation.forEach((n) => {
+
+      this.navigation.forEach((n) => {
         //在小数组满且需要继续添加数据时进入
         if (8 === dataArr.length) dataArr = []
         //在首次循环或每次小数组满时进入
@@ -49,7 +49,6 @@ export default {
     navigation() {
       this.$nextTick(() => {
         new Swiper(this.$refs.mySwiper, {
-          loop: true,
           /* 大问题：此处使用ref会导致分页器更新混乱并出现划不动现象 */
           /* 查阅文档知：refs不是响应式的，因此不能用在v-for等模板中。 */
           pagination: {el: '.swiper-pagination'},
@@ -57,6 +56,13 @@ export default {
       })
     },
   },
+  // mounted() {
+  //   this.$nextTick(()=>{
+  //     new Swiper('.swiper-container', {
+  //       pagination: {el: '.swiper-pagination'},
+  //     })
+  //   })
+  // }
 }
 </script>
 
@@ -64,7 +70,6 @@ export default {
 .nav {
   padding-top: 5px;
   height: 220px;
-  background: #F7F7F7;
 
   //swiper插件
   .swiper-container {

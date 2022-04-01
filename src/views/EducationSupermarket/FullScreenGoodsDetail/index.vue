@@ -10,7 +10,7 @@
         </div>
         <!-- 下半部分 -->
         <div class="down">
-          <h3 class="food-name">{{ good.name }}</h3>
+          <span class="food-name">{{ good.name }}</span>
           <!-- 餐品用料 -->
           <p class="components">{{ good.info }}</p>
           <div class="sells-detail">

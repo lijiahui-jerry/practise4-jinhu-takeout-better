@@ -41,10 +41,10 @@ export default {
     /*登录时判断（应该由后端人员编写api接口并处理），此时所有表单数据均已符合逻辑，但是否正确填写仍需进一步判断*/
     accountLogin(a, p, c) {
       if ('17601355494' == a && '12345678' == p && 'wk3v' == c) {
-        localStorage.setItem("token", "1")
+        localStorage.setItem("token", "f9f6df26-90a7-11ec-9f87-525400fdffcd")
         return {code: 200}
       } else if ('8888' == a && '12345678' == p && 'wk3v' == c) {
-        localStorage.setItem("token", "8888")
+        localStorage.setItem("token", "ea80d399-90a7-11ec-9f87-525400fdffcd")
         return {code: 200}
       } else if ('wk3v' != c) {
         this.$parent.tipBox('验证码输入有误，请核对后重试')

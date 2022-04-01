@@ -51,11 +51,9 @@ export default {
   methods: {
     //切换登录的方式
     toggleLoginType(flag) {
-      //这里不能简单地对当前状态取反来实现，因为点击同一个登录方式两次时，简单取反方式会触发切换，但实际上不能让它切换
-      //this.phoneLogin=!this.phoneLogin
-      this.firstFlag = false
-
-      if (flag != this.phoneLogin) this.phoneLogin = flag
+      // flag:true为短信登录，否则为账户登录
+      if (flag != this.phoneLogin)
+        this.phoneLogin = flag
     },
     //提示内容函数
     tipBox(t) {
@@ -97,7 +95,8 @@ export default {
         } else if (4 != captcha.length) {
           this.tipBox('请正确输入4位验证码')
         } else {
-          if (200 == this.$refs.childAccount.accountLogin(account, password, captcha).code) this.$router.push('/me')
+          if (200 == this.$refs.childAccount.accountLogin(account, password, captcha).code)
+            this.$router.push('/me')
         }
       }
     },

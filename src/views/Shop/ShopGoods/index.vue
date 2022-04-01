@@ -105,10 +105,9 @@ export default {
         click: true,
       })
       this.foodsScroll = new BScroll('.foods-wrapper', {
-        probeType: 2,
         click: true,
       })
-      //监听右侧食 物的滑动情况
+      //监听右侧食物的滑动情况
       this.foodsScroll.on('scrollEnd', ({y}) => {
         this.scrollY = Math.abs(y)
       })
@@ -120,7 +119,7 @@ export default {
       //首个分类菜单的位置一定是0，最顶部
       menuItemPositions.push(pos)
 
-      const lis = this.$refs.foods.getElementsByClassName('food-list')
+      let lis = this.$refs.foods.getElementsByClassName('food-list')
       /*************************************************
        * 为什么要这样写？                                  *
        * 得到的HTMLCollection并不是一个数组，而是一个对象，    *
@@ -219,6 +218,7 @@ export default {
 
     .foods-wrapper {
       padding: 0;
+
       .food-header-name {
         font-size: 12px;
         padding-left: 1em;

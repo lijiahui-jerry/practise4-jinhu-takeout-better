@@ -78,15 +78,27 @@ import BScroll from "better-scroll";
 export default {
   name: "ShopList",
   components: {Star},
-  mounted() {
-    this.$nextTick(() => {
-      setTimeout(() => {
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     setTimeout(() => {
+  //       if (!this.shopListBS)
+  //         this.shopListBS = new BScroll(this.$refs.itemList, {click: true})
+  //       else
+  //         this.shopListBS.refresh()
+  //     }, 200)
+  //   })
+  // },
+  watch: {
+    shops() {
+      this.$nextTick(() => {
         if (!this.shopListBS)
-          this.shopListBS = new BScroll(this.$refs.itemList, {click: true})
+          this.shopListBS = new BScroll(this.$refs.itemList, {
+            click: true
+          })
         else
           this.shopListBS.refresh()
-      }, 200)
-    })
+      })
+    }
   },
   methods: {
     //根据数据库查询到的supports字符串，得到相应的supports数组，用于v-for，没有任何support则返回空数组。

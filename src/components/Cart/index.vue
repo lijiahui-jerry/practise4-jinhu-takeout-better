@@ -22,9 +22,9 @@
      </div>
     </div>
     <!-- 立即干饭 -->
-    <div class="right">
+    <div class="right" @click="goToPay()">
      <div class="pay" :class="payOrNotCLASS()">
-      {{payOrNotTEXT()}}
+      {{payOrNotTEXT}}
      </div>
     </div>
    </div>
@@ -67,7 +67,6 @@ import BScroll from "better-scroll"
 import CartControl from "@/components/CartControl"
 import {mapState,mapGetters} from "vuex"
 import {MessageBox} from "mint-ui"
-
 export default {
   name:"Cart",
   components:{CartControl},
@@ -77,6 +76,15 @@ export default {
     }
   },
   computed:{
+    //判断当前是否满足起送价要求，返回提示信息
+    payOrNotTEXT(){
+      const {totalPrice}=this
+      const {minPrice}=this.info
+
+      if(0==totalPrice) return `${minPrice}元起送`
+      else if(totalPrice<minPrice) return `还差${minPrice-totalPrice}元起送`
+      else return '立即干饭'
+    },
     //根据当前购物车是否为空及是否需要显示列表，综合计算当前是否应该显示购物车列表
     couldShowList(){
       if(0==this.totalCount){
@@ -102,6 +110,10 @@ export default {
     ...mapGetters(['totalCount','totalPrice']),
   },
   methods:{
+    goToPay(){
+      if ('立即干饭'==this.payOrNotTEXT)
+        this.$router.push('/orderDetail')
+    },
     //配送费
     deliveryFee(fee){
       if(fee){
@@ -123,15 +135,7 @@ export default {
 
       return totalPrice>=minPrice?'enough':'not-enough'
     },
-    //判断当前是否满足起送价要求，返回提示信息
-    payOrNotTEXT(){
-      const {totalPrice}=this
-      const {minPrice}=this.info
 
-      if(0==totalPrice) return `${minPrice}元起送`
-      else if(totalPrice<minPrice) return `还差${minPrice-totalPrice}元起送`
-      else return '立即干饭'
-    },
     //切换购物车列表的显示状态
     toggleIfShowList(){
       if(this.totalCount>0){
